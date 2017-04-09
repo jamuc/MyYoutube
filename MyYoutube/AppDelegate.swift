@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  MyYoutube
-//
-//  Created by Jason Franklin on 02/04/2017.
-//  Copyright © 2017 Jason Franklin. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -20,6 +12,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let rootViewController = HomeController(collectionViewLayout: UICollectionViewFlowLayout())
         window?.rootViewController = UINavigationController(rootViewController: rootViewController)
+
+        UINavigationBar.appearance().barTintColor = UIColor.rgb(colorLiteralRed: 230, green: 32, blue: 31)
+        application.statusBarStyle = .lightContent
+
+        let statusBarView = UIView()
+        statusBarView.backgroundColor = UIColor.rgb(colorLiteralRed: 194, green: 31, blue: 31)
+        window?.addSubview(statusBarView)
+
+        window?.addConstraints(withFormat: "H:|[v0]|", views: statusBarView)
+        window?.addConstraints(withFormat: "V:|[v0(22)]", views: statusBarView)
         return true
     }
 
